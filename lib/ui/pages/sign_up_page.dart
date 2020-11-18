@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Email Address",
               style: blackFontStyle2,
@@ -79,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
               border: Border.all(color: Colors.black)
             ),
             child: TextField(
-              controller: emailController,
+              controller: nameController,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintStyle: greyFontStyle,
@@ -114,10 +114,12 @@ class _SignUpPageState extends State<SignUpPage> {
            ),
            Container(
              width: double.infinity,
-             margin: EdgeInsets.only(top: 24),
+             margin: EdgeInsets.only(top: 24, bottom: 24),
              height: 45,
              padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-             child: RaisedButton(onPressed: () {},
+             child: RaisedButton(onPressed: () {
+               Get.to(AddressPage());
+             },
              elevation: 0,
              shape: RoundedRectangleBorder(
                borderRadius: BorderRadius.circular(8) 
@@ -126,7 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                child: Text(
                   'Continue',
                   style: GoogleFonts.poppins(
-                    color: Colors.white, fontWeight: FontWeight.w500),  
+                    color: Colors.black, fontWeight: FontWeight.w500),  
                ),
                ),
           ),

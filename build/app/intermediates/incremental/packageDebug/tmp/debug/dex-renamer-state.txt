@@ -1,4 +1,4 @@
-#Tue Nov 17 11:46:23 WIB 2020
+#Wed Nov 18 13:01:10 WIB 2020
 base.0=/home/ipung/Documents/My Project/food_market/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
