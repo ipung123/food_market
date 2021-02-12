@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,3 +18,4 @@ part 'sign_up_page.dart';
 part 'address_page.dart';
 part 'main_page.dart';
 part 'food_page.dart';
+part 'food_details_page.dart';
