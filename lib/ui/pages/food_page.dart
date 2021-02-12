@@ -9,6 +9,7 @@ class _FoodPageState extends State<FoodPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    double listItemWidth = MediaQuery.of(context).size.width - 2 * defaultMargin;
     return ListView(
       children: [
         Column(
@@ -84,18 +85,29 @@ class _FoodPageState extends State<FoodPage> {
                     height: 16,
                   ),
                   Builder(builder: (_) {
-                    String body = (selectedIndex == 0) ? 'New Taste Body' : (selectedIndex == 1) ? 'Popular Body' : 'Recommended Body';
+                    List<Food> foods = (selectedIndex == 0)
+                        ? mockFoods
+                        : (selectedIndex == 1) 
+                            ? [] 
+                            : [];
 
-                    return Center(
-                      child: Text(body, style: blackFontStyle2,
-                      ),
+                    return Column(
+                      children: foods
+                          .map((e) => 
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    defaultMargin, 0, defaultMargin, 16),
+                                child: FoodListItem(
+                                    food: e, itemWidth: listItemWidth),
+                              ))
+                          .toList(),
                       );
                   }),
-                  SizedBox(
-                    height: 80,
-                  )
                 ],
               ),
+            ),
+            SizedBox(
+                    height: 80,
             )
           ],
         )
